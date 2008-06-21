@@ -8,7 +8,8 @@ RUBYFORGE_PROJECT = 'br_dinheiro' # The unix name for your project
 HOMEPATH = "http://www.improveit.com.br/software_livre/brazilian_rails"
 DOWNLOAD_PATH = "http://github.com/tapajos/brazilian-rails"
 EXTRA_DEPENDENCIES = [
-  ['activerecord', '>= 1.15.3']
+   ['activerecord', '>= 1.15.3'],
+   ['activesupport', '>= 1.4.2']
 ]    # An array of rubygem dependencies [name, version]
 
 # @config_file = "~/.rubyforge/user-config.yml"

@@ -11,6 +11,7 @@ number_portuguese).each {|req| require File.dirname(__FILE__) + "/br_dinheiro/#{
 require 'bigdecimal'
 require 'rubygems'
 require 'active_record'
+require 'activesupport'
 
 
 
@@ -18,18 +19,4 @@ String.send(:include, DinheiroUtil)
 ActiveRecord::Base.send :include, DinheiroActiveRecord
 
 module BrDinheiro  
-end
-
-
-class String
-  def blank?
-    return true if self && self == ""
-    false
-  end
-end
-
-class NilClass
-  def blank?
-    true
-  end
 end
