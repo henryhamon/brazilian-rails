@@ -4,7 +4,7 @@ require 'rake/contrib/sshpublisher'
 
 env = %(PKG_BUILD="#{ENV['PKG_BUILD']}") if ENV['PKG_BUILD']
 
-PROJECTS = %w(br_dinheiro)
+PROJECTS = %w(brdinheiro)
 
 Dir["#{File.dirname(__FILE__)}/*/lib/*/version.rb"].each do |version_path|
   require version_path
@@ -34,9 +34,9 @@ Rake::RDocTask.new do |rdoc|
 
   rdoc.template = "#{ENV['template']}.rb" if ENV['template']
 
-  rdoc.rdoc_files.include('br_dinheiro/README')
-  rdoc.rdoc_files.include('br_dinheiro/CHANGELOG')
-  rdoc.rdoc_files.include('br_dinheiro/lib/**/*.rb')
+  rdoc.rdoc_files.include('brdinheiro/README')
+  rdoc.rdoc_files.include('brdinheiro/CHANGELOG')
+  rdoc.rdoc_files.include('brdinheiro/lib/**/*.rb')
 
 end
 
