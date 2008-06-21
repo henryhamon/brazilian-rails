@@ -5,15 +5,13 @@ $:.unshift(File.dirname(__FILE__)) unless
 dinheiro_util
 dinheiro_active_record
 excecoes
-number_portuguese).each {|req| require File.dirname(__FILE__) + "/br_dinheiro/#{req}"}
+number_portuguese).each {|req| require File.dirname(__FILE__) + "/brdinheiro/#{req}"}
 
 
 require 'bigdecimal'
 require 'rubygems'
 require 'active_record'
 require 'activesupport'
-
-
 
 String.send(:include, DinheiroUtil)
 ActiveRecord::Base.send :include, DinheiroActiveRecord

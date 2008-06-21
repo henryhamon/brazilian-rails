@@ -1,5 +1,5 @@
 require 'test/unit'
-require File.dirname(__FILE__) + '/../lib/br_dinheiro'
+require File.dirname(__FILE__) + '/../lib/brdinheiro'
 
 
 def tornar_metodos_publicos(clazz)
