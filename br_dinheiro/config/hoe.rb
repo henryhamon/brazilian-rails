@@ -2,33 +2,33 @@ require 'br_dinheiro/version'
 
 AUTHOR = 'Marcos Tapajós'  # can also be an array of Authors
 EMAIL = "tapajos@improveit.com.br"
-DESCRIPTION = "description of gem"
+DESCRIPTION = "O Brazilian Rails é um conjunto de gems para ajudar os brazileiros"
 GEM_NAME = 'br_dinheiro' # what ppl will type to install your gem
 RUBYFORGE_PROJECT = 'br_dinheiro' # The unix name for your project
-HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
-DOWNLOAD_PATH = "http://rubyforge.org/projects/#{RUBYFORGE_PROJECT}"
+HOMEPATH = "http://www.improveit.com.br/software_livre/brazilian_rails"
+DOWNLOAD_PATH = "http://github.com/tapajos/brazilian-rails"
 EXTRA_DEPENDENCIES = [
-#  ['activesupport', '>= 1.3.1']
+  ['activerecord', '>= 1.15.3']
 ]    # An array of rubygem dependencies [name, version]
 
-@config_file = "~/.rubyforge/user-config.yml"
-@config = nil
-RUBYFORGE_USERNAME = "unknown"
-def rubyforge_username
-  unless @config
-    begin
-      @config = YAML.load(File.read(File.expand_path(@config_file)))
-    rescue
-      puts <<-EOS
-ERROR: No rubyforge config file found: #{@config_file}
-Run 'rubyforge setup' to prepare your env for access to Rubyforge
- - See http://newgem.rubyforge.org/rubyforge.html for more details
-      EOS
-      exit
-    end
-  end
-  RUBYFORGE_USERNAME.replace @config["username"]
-end
+# @config_file = "~/.rubyforge/user-config.yml"
+# @config = nil
+# RUBYFORGE_USERNAME = "unknown"
+# def rubyforge_username
+#   unless @config
+#     begin
+#       @config = YAML.load(File.read(File.expand_path(@config_file)))
+#     rescue
+#       puts <<-EOS
+# ERROR: No rubyforge config file found: #{@config_file}
+# Run 'rubyforge setup' to prepare your env for access to Rubyforge
+#  - See http://newgem.rubyforge.org/rubyforge.html for more details
+#       EOS
+#       exit
+#     end
+#   end
+#   RUBYFORGE_USERNAME.replace @config["username"]
+# end
 
 
 REV = nil
