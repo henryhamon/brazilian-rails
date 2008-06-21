@@ -1,35 +1,49 @@
 require 'rake'
-require 'rake/testtask'
 require 'rake/rdoctask'
-require 'rcov/rcovtask'
+require 'rake/contrib/sshpublisher'
 
-desc 'Default: run unit tests.'
+env = %(PKG_BUILD="#{ENV['PKG_BUILD']}") if ENV['PKG_BUILD']
+
+PROJECTS = %w(br_dinheiro)
+
+Dir["#{File.dirname(__FILE__)}/*/lib/*/version.rb"].each do |version_path|
+  require version_path
+end
+
+desc 'Run all tests by default'
 task :default => :test
 
-desc 'Test the Brazilian Rails plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
+%w(test rdoc package release).each do |task_name|
+  desc "Run #{task_name} task for all projects"
+  task task_name do
+    PROJECTS.each do |project|
+      system %(cd #{project} && #{env} #{$0} #{task_name})
+    end
+  end
 end
 
-desc 'Generate documentation for the Brazilian Rails plugin.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Brazilian Rails'
+
+desc "Generate documentation for the Rails framework"
+Rake::RDocTask.new do |rdoc|
+  rdoc.rdoc_dir = 'doc'
+  rdoc.title    = "Brazilian Rails Documentation"
+
   rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.options << '-A cattr_accessor=object'
+  rdoc.options << '--charset' << 'utf-8'
+
+  rdoc.template = "#{ENV['template']}.rb" if ENV['template']
+
+  rdoc.rdoc_files.include('br_dinheiro/README')
+  rdoc.rdoc_files.include('br_dinheiro/CHANGELOG')
+  rdoc.rdoc_files.include('br_dinheiro/lib/**/*.rb')
+
 end
 
-desc "Generate code coverage report for Brazilian Rails plugin."
-Rcov::RcovTask.new do |t|
-  t.test_files = FileList['test/*_test.rb']
-  t.rcov_opts << '-x init.rb'
-  t.rcov_opts << '-x dependency_list.rb'
-  t.rcov_opts << '-x app'
-  t.rcov_opts << '--rails'
-  t.rcov_opts << '--charset UTF-8'
-  t.verbose = true
-end
-
+# desc "Publish API docs for Rails as a whole and for each component"
+# task :pdoc => :rdoc do
+#   Rake::SshDirPublisher.new("wrath.rubyonrails.org", "public_html/api", "doc").upload
+#   PROJECTS.each do |project|
+#     system %(cd #{project} && #{env} #{$0} pdoc)
+#   end
+# end
