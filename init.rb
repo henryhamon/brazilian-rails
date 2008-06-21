@@ -13,8 +13,6 @@ string_portuguese
 dinheiro_active_record
 busca_endereco).each {|req| require req}
 
-ActiveRecord::Base.send :include, DinheiroActiveRecord
-
 old_verbose = $VERBOSE
 $VERBOSE = nil
 [Time, Date].each do |clazz|
