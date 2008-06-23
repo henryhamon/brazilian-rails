@@ -22,13 +22,4 @@ $VERBOSE = nil
   eval "#{clazz}::ABBR_DAYNAMES = %w(Dom Seg Ter Qua Qui Sex Sab)"
 end
 
-FERIADOS_PATH = RAILS_ROOT + '/config/feriados'
-feriados, metodos = FeriadoParser.parser(File.dirname(__FILE__) + "/lib/config")
-if File.directory?(FERIADOS_PATH)
-  f, m = FeriadoParser.parser(FERIADOS_PATH)
-  feriados += f
-  metodos += m
-end
-Date::FERIADOS = feriados;
-Date::FERIADOS_METODOS = metodos
 $VERBOSE = old_verbose

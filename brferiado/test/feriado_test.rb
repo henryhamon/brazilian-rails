@@ -4,6 +4,34 @@ class FeriadoTest < Test::Unit::TestCase
   
   ATRIBUTOS = %w(dia mes nome)
   
+  # feriado 
+  def test_feriado_quando_feriado
+    assert "25/12/2007".to_date.feriado?
+  end
+  
+  def test_feriado_quando_nao_eh_feriado
+    assert !"01/12/2007".to_date.feriado?
+  end
+  
+  def test_feriado_quando_feriado_eh_pascoa
+    assert "08/04/2007".to_date.feriado?
+  end
+  
+  def test_feriado_quando_feriado_eh_corpus_christi
+    assert "07/06/2007".to_date.feriado?
+  end
+  
+  # pascoa
+  def test_pascoa
+    assert_equal "08/04/2007", "01/01/2007".to_date.pascoa.to_s_br
+  end
+  
+  # corpus_christi
+  def test_corpus_christi
+    assert_equal "07/06/2007", "01/01/2007".to_date.corpus_christi.to_s_br
+  end
+  
+  
   def test_attributes
     feriado = Feriado.new("nome", "01", "01")
     ATRIBUTOS.each do |atributo|
