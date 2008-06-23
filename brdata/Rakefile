@@ -5,16 +5,16 @@ require 'rake/rdoctask'
 require 'rake/packagetask'
 require 'rake/gempackagetask'
 require 'rake/contrib/sshpublisher'
-require File.join(File.dirname(__FILE__), 'lib', 'brferiado', 'version')
+require File.join(File.dirname(__FILE__), 'lib', 'brdata', 'version')
 
 PKG_BUILD     = ENV['PKG_BUILD'] ? '.' + ENV['PKG_BUILD'] : ''
-PKG_NAME      = 'brferiado'
-PKG_VERSION   = BrFeriado::VERSION::STRING + PKG_BUILD
+PKG_NAME      = 'brdata'
+PKG_VERSION   = BrData::VERSION::STRING + PKG_BUILD
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
 RELEASE_NAME  = "REL #{PKG_VERSION}"
 
-RUBY_FORGE_PROJECT = "brferiado"
+RUBY_FORGE_PROJECT = "brdata"
 RUBY_FORGE_USER    = "tapajos"
 
 desc "Default Task"
@@ -46,21 +46,21 @@ Rake::TestTask.new { |t|
 spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.name = PKG_NAME
-  s.summary = "brferiado é uma das gems que compoem o Brazilian Rails"
-  s.description = %q{brferiado é uma das gems que compoem o Brazilian Rails}
+  s.summary = "brdata é uma das gems que compoem o Brazilian Rails"
+  s.description = %q{brdata é uma das gems que compoem o Brazilian Rails}
   s.version = PKG_VERSION
 
   s.author = "Marcos Tapajós"
   s.email = "tapajos@gmail.com"
-  s.rubyforge_project = "brferiado"
+  s.rubyforge_project = "brdata"
   s.homepage = "http://www.improveit.com.br/software_livre/brazilian_rails"
+
+  s.add_dependency('activesupport', '>= 1.4.2')
 
   s.has_rdoc = true
   s.requirements << 'none'
   s.require_path = 'lib'
-  # s.autorequire = 'brferiado'
-  
-  s.add_dependency('brdata', '>= 0.0.1')
+  # s.autorequire = 'brdata'
 
   s.files = [ "Rakefile", "README", "CHANGELOG", "TODO", "MIT-LICENSE" ]
   s.files = s.files + Dir.glob( "lib/**/*" ).delete_if { |item| item.include?( "\.svn" ) }
