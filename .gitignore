@@ -1,2 +1,9 @@
 .DS_Store
-coverage
+brdinheiro/pkg
+brdinheiro/doc
+brferiado/pkg
+brferiado/doc
+brcep/pkg
+brcep/doc
+brtraducao/pkg
+brtraducao/doc
