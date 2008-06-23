@@ -158,6 +158,5 @@ module ExtensoReal
   end
 end
 
-Numeric.send(:include, DinheiroUtil)
 Numeric.send(:include, ExtensoReal)
 

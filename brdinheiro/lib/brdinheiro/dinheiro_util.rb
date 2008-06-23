@@ -41,3 +41,4 @@ module DinheiroUtil
   end
 end
 
+Numeric.send(:include, DinheiroUtil)
