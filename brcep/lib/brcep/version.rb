@@ -1,4 +1,4 @@
-module BrFeriado
+module BrCep
   module VERSION #:nodoc:
     MAJOR = 0
     MINOR = 0

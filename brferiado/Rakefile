@@ -9,7 +9,7 @@ require File.join(File.dirname(__FILE__), 'lib', 'brferiado', 'version')
 
 PKG_BUILD     = ENV['PKG_BUILD'] ? '.' + ENV['PKG_BUILD'] : ''
 PKG_NAME      = 'brferiado'
-PKG_VERSION   = BrDinheiro::VERSION::STRING + PKG_BUILD
+PKG_VERSION   = BrFeriado::VERSION::STRING + PKG_BUILD
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
 RELEASE_NAME  = "REL #{PKG_VERSION}"

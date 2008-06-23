@@ -1,6 +1,8 @@
 require File.dirname(__FILE__) + '/test_helper'
+require 'rubygems'
 require 'net/http'
 require 'mocha'
+
 
 INVALID_ZIPS = [0, '0', '00', '000', '0000', '00000', '000000', '0000000', '00000000']
 VALID_ZIPS = [22640100, '22640100', '22.640-100', '22.640-100']
