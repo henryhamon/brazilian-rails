@@ -5,7 +5,8 @@ $:.unshift(File.dirname(__FILE__)) unless
 dinheiro_util
 dinheiro_active_record
 excecoes
-number_portuguese).each {|req| require File.dirname(__FILE__) + "/brdinheiro/#{req}"}
+number_portuguese
+nil_class).each {|req| require File.dirname(__FILE__) + "/brdinheiro/#{req}"}
 
 
 require 'bigdecimal'
