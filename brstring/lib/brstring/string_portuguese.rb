@@ -1,12 +1,4 @@
-# ÚLTIMO AVISO! 
-#
-# Os métodos upcase_br e downcase_br serão removidos na próxima versão do plugin,
-# então, fique experto! :)
-#
-# Quem avisa amigo é!
-
 class String
-
   MINUSCULAS_COM_ACENTO = 'áéíóúâêîôûàèìòùäëïöüãõñç'
   MAIUSCULAS_COM_ACENTO = 'ÁÉÍÓÚÂÊÎÔÛÀÈÌÒÙÄËÏÖÜÃÕÑÇ'
   
@@ -42,28 +34,12 @@ class String
     self.tr(MINUSCULAS, MAIUSCULAS)
   end
   
-  # Alias para upcase
-  #
-  # AVISO: Este metodo sera removido na proxima revisao, usar o metodo upcase.
-  def upcase_br
-    RAILS_DEFAULT_LOGGER.warn "AVISO: Este metodo sera removido na proxima revisao, usar o metodo upcase."
-    self.upcase
-  end  
-
   # Retorna uma string com caracteres minúsculos
   # 
   # Exemplo:
   #  'TEXTO COM ACENTUAÇÃO'.downcase ==> 'texto com acentuação'
   def downcase
     self.tr(MAIUSCULAS, MINUSCULAS)
-  end
-  
-  # Alias para downcase
-  #
-  #AVISO: Este metodo sera removido na proxima revisao, usar o metodo downcase.
-  def downcase_br
-    RAILS_DEFAULT_LOGGER.warn "AVISO: Este metodo sera removido na proxima revisao, usar o metodo downcase."
-    self.downcase
   end
   
   # Passa a primeira letra de cada palavra para maiúscula e as demais para minúsculas.
@@ -131,7 +107,5 @@ class String
     texto = self.titleize
     self.gsub!(/^.*$/, texto)
   end  
-
-  include DinheiroUtil
   
 end

@@ -87,14 +87,6 @@ class StringPortugueseTest < Test::Unit::TestCase
     assert_equal String::MAIUSCULAS, String::MINUSCULAS.upcase
   end
 
-  def test_downcase_br
-    assert_equal String::MINUSCULAS, String::MAIUSCULAS.downcase_br
-  end
-  
-  def test_upcase_br
-    assert_equal String::MAIUSCULAS, String::MINUSCULAS.upcase_br
-  end
-  
   def test_titleize
     NOMES_TITLEIZE.each {|k,v| assert_equal k, v.titleize }
   end
