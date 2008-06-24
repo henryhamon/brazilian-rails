@@ -8,13 +8,13 @@ require 'rake/contrib/sshpublisher'
 require File.join(File.dirname(__FILE__), 'lib', 'brferiado', 'version')
 
 PKG_BUILD     = ENV['PKG_BUILD'] ? '.' + ENV['PKG_BUILD'] : ''
-PKG_NAME      = 'brferiado'
+PKG_NAME      = 'brferiados'
 PKG_VERSION   = BrFeriado::VERSION::STRING + PKG_BUILD
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
 RELEASE_NAME  = "REL #{PKG_VERSION}"
 
-RUBY_FORGE_PROJECT = "brferiado"
+RUBY_FORGE_PROJECT = "brferiados"
 RUBY_FORGE_USER    = "tapajos"
 
 desc "Default Task"
