@@ -6,17 +6,18 @@ require 'action_controller'
 require 'html/document'
 require 'active_support'
 require 'action_view'
-
-
   
 %w(date_portuguese
 time_portuguese
 version
 br_date_helper
+feriado
+feriado_parser
+excecoes
 ).each {|req| require File.dirname(__FILE__) + "/brdata/#{req}"}
 
 
-module BrCep
+module BrData
 end
 
 old_verbose = $VERBOSE
@@ -29,3 +30,13 @@ $VERBOSE = nil
 end
 
 $VERBOSE = old_verbose
+
+# FERIADOS_PATH = RAILS_ROOT + '/config/feriados'
+feriados, metodos = FeriadoParser.parser(File.dirname(__FILE__) + "/brdata/config")
+# if File.directory?(FERIADOS_PATH)
+#   f, m = FeriadoParser.parser(FERIADOS_PATH)
+#   feriados += f
+#   metodos += m
+# end
+Date::FERIADOS = feriados;
+Date::FERIADOS_METODOS = metodos
