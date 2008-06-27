@@ -4,7 +4,7 @@ require 'rake/contrib/sshpublisher'
 
 env = %(PKG_BUILD="#{ENV['PKG_BUILD']}") if ENV['PKG_BUILD']
 
-PROJECTS = %w(brdinheiro brferiado brcep brdata brtraducao brnumeros)
+PROJECTS = %w(brdinheiro brcep brdata brtraducao brnumeros brstring)
 
 Dir["#{File.dirname(__FILE__)}/*/lib/*/version.rb"].each do |version_path|
   require version_path
@@ -33,11 +33,14 @@ Rake::RDocTask.new do |rdoc|
   rdoc.options << '--charset' << 'utf-8'
 
   rdoc.template = "#{ENV['template']}.rb" if ENV['template']
+  
+  PROJECTS.each do |project|
+    rdoc.rdoc_files.include("#{project}/README")
+    rdoc.rdoc_files.include("#{project}/CHANGELOG")
+    rdoc.rdoc_files.include("#{project}/lib/**/*.rb")
+  end
 
-  rdoc.rdoc_files.include('brdinheiro/README')
-  rdoc.rdoc_files.include('brdinheiro/CHANGELOG')
-  rdoc.rdoc_files.include('brdinheiro/lib/**/*.rb')
-
+  
 end
 
 # desc "Publish API docs for Rails as a whole and for each component"
