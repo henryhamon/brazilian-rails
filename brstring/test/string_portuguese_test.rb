@@ -1,5 +1,7 @@
 require File.dirname(__FILE__) + '/test_helper'
 
+VAZIO = ''
+
 NOMES_PROPRIOS = {
   'Paulo Gomes' => 'paulo gomes',
   'Pedro da Silva' => 'pedro da silva',
@@ -26,7 +28,6 @@ NOMES_TITLEIZE =     {
     "Á É Í Ó Ú À È Ì Ò Ù Ã Õ Â Ê Î Ô Û Ä Ë Ï Ö Ü" => 'á é í ó ú à è ì ò ù ã õ â ê î ô û ä ë ï ö ü'
 } #:nodoc:
 
-
 class StringPortugueseTest < Test::Unit::TestCase  
   def test_letras_maiusculas
     assert_equal 'ABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚÂÊÎÔÛÀÈÌÒÙÄËÏÖÜÃÕÑÇ', String::MAIUSCULAS
@@ -44,6 +45,8 @@ class StringPortugueseTest < Test::Unit::TestCase
     palavras_excluidas.each do |char|
       assert_equal char, char.nome_proprio, "Não deveria alterar o caracter '#{char}'"
     end
+    
+    assert_equal VAZIO, VAZIO.nome_proprio
   end
   
   def test_nome_proprio!
@@ -60,6 +63,11 @@ class StringPortugueseTest < Test::Unit::TestCase
       nome.nome_proprio!
       assert_equal char, nome, "Não deveria alterar o caracter '#{char}'"
     end
+    
+    vazio = ''
+    vazio.nome_proprio
+    
+    assert VAZIO, vazio
   end
 
   def test_remover_acentos
@@ -89,6 +97,7 @@ class StringPortugueseTest < Test::Unit::TestCase
 
   def test_titleize
     NOMES_TITLEIZE.each {|k,v| assert_equal k, v.titleize }
+    assert_equal VAZIO, VAZIO.titleize
   end
 
   def test_titleize!
@@ -96,6 +105,11 @@ class StringPortugueseTest < Test::Unit::TestCase
       v.titleize!
       assert_equal k, v
     end
+    
+    vazio = ''
+    vazio.titleize!
+    
+    assert_equal VAZIO, vazio
   end
 
   def test_upcase!
