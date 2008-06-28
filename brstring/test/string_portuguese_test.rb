@@ -147,9 +147,6 @@ class StringPortugueseTest < Test::Unit::TestCase
       v.titleize!
       assert_equal k, v
     end
-    
-    vazio = ''
-    vazio.titleize!
   end
 
 end
