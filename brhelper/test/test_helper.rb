@@ -1,6 +1,5 @@
 require 'test/unit'
-require File.dirname(__FILE__) + '/../lib/brcep'
-
+require File.dirname(__FILE__) + '/../lib/brhelper'
 
 def tornar_metodos_publicos(clazz)
   clazz.class_eval do
