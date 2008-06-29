@@ -1,5 +1,6 @@
 # Global
 
+* Realocar o que está na raiz e não deveria.
 * Marcar uma tag na versão antiga como versão 1.0
 * Criar uma gem chamada brazilian\_rails que tem todas as outras como dependência e faz o require de todas, da mesma forma que o init.rb faz para o caso de ser usado como plugin.
 * Trocar o nome do Autor da gem para um array com o nome de todos. Isso deve ser feito em todas as gems.
