@@ -5,6 +5,12 @@
 * Trocar o nome do Autor da gem para um array com o nome de todos. Isso deve ser feito em todas as gems.
 * Ajustar o README para além do papo alegre explicar como instalar a gem e como usar como plugin. Fazer com que nesse gem também tenha a explicação de como utilizar cada gem. Para não duplicar seria legal gerar uma task para montar esse README incluindo o de todas as outras gems.
 * Fazer uma aplicação de testes usando como GEM e depois como plugin e ver se está tudo funcionando de verdade.
+* Chamar esse novo release de Brazilian Rails 2.0 e dar esse nome a todas as gems.
+* Gerar toda a documentação
+* Atualizar a documentação no site da Improve It.
+* Fazer o release
+* Fazer post de divulgação
+* Tomar um choop!
 
 # brcep
 
