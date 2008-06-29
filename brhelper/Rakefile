@@ -54,12 +54,12 @@ spec = Gem::Specification.new do |s|
   s.rubyforge_project = "brhelper"
   s.homepage = "http://www.improveit.com.br/software_livre/brazilian_rails"
 
-  s.add_dependency('actionpack', '>= 1.4.2')
+  s.add_dependency('actionpack', '>= 1.13.6')
+  s.add_dependency('activesupport', '>= 1.4.2')
 
   s.has_rdoc = true
   s.requirements << 'none'
   s.require_path = 'lib'
-  # s.autorequire = 'brhelper'
 
   s.files = [ "Rakefile", "README", "CHANGELOG", "TODO", "MIT-LICENSE" ]
   s.files = s.files + Dir.glob( "lib/**/*" ).delete_if { |item| item.include?( "\.svn" ) }
