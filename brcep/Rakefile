@@ -5,6 +5,7 @@ require 'rake/rdoctask'
 require 'rake/packagetask'
 require 'rake/gempackagetask'
 require 'rake/contrib/sshpublisher'
+
 require File.join(File.dirname(__FILE__), 'lib', 'brcep', 'version')
 
 PKG_BUILD     = ENV['PKG_BUILD'] ? '.' + ENV['PKG_BUILD'] : ''
@@ -53,8 +54,6 @@ spec = Gem::Specification.new do |s|
   s.email = "tapajos@gmail.com"
   s.rubyforge_project = "brcep"
   s.homepage = "http://www.improveit.com.br/software_livre/brazilian_rails"
-
-  s.add_dependency('actionpack', '>= 1.4.2')
 
   s.has_rdoc = true
   s.requirements << 'none'
