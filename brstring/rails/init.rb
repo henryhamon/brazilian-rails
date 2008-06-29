@@ -1,1 +1,1 @@
-require 'brstring'
+require File.dirname(__FILE__) + '/../lib/brstring'

@@ -1,1 +1,1 @@
-require 'brdinheiro'
+require File.dirname(__FILE__) + '/../lib/brdinheiro'
