@@ -23,8 +23,6 @@
 
 # brdinheiro
 
-* adicionar o modulo --> Não entendi!
-* testes do dinheiro_active_record
 * Ajustar o README explicando como usar essa gem.
 
 # brhelper

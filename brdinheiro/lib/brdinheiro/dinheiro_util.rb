@@ -42,3 +42,4 @@ module DinheiroUtil
 end
 
 Numeric.send(:include, DinheiroUtil)
+String.send(:include, DinheiroUtil)
