@@ -62,7 +62,7 @@ spec = Gem::Specification.new do |s|
   s.require_path = 'lib'
   # s.autorequire = 'brdata'
 
-  s.files = [ "Rakefile", "README", "CHANGELOG", "TODO", "MIT-LICENSE" ]
+  s.files = [ "Rakefile", "README", "CHANGELOG", "MIT-LICENSE" ]
   s.files = s.files + Dir.glob( "lib/**/*" ).delete_if { |item| item.include?( "\.svn" ) }
   s.files = s.files + Dir.glob( "test/**/*" ).delete_if { |item| item.include?( "\.svn" ) }
 end
