@@ -3,7 +3,6 @@
 * Realocar o que está na raiz e não deveria.
 * Marcar uma tag na versão antiga como versão 1.0
 * Criar uma gem chamada brazilian\_rails que tem todas as outras como dependência e faz o require de todas, da mesma forma que o init.rb faz para o caso de ser usado como plugin.
-* Trocar o nome do Autor da gem para um array com o nome de todos. Isso deve ser feito em todas as gems.
 * Ajustar o README para além do papo alegre explicar como instalar a gem e como usar como plugin. Fazer com que nesse gem também tenha a explicação de como utilizar cada gem. Para não duplicar seria legal gerar uma task para montar esse README incluindo o de todas as outras gems.
 * Fazer uma aplicação de testes usando como GEM e depois como plugin e ver se está tudo funcionando de verdade.
 * Chamar esse novo release de Brazilian Rails 2.0 e dar esse nome a todas as gems.
@@ -28,7 +27,6 @@
 # brhelper
 
 * Ajustar o README explicando como usar essa gem.
-* Criar projeto no rubyforge para essa gem
 
 # brnumeros
 

@@ -49,7 +49,7 @@ spec = Gem::Specification.new do |s|
   s.description = %q{brdinheiro é uma das gems que compoem o Brazilian Rails}
   s.version = PKG_VERSION
 
-  s.author = "Marcos Tapajós"
+  s.authors = ["Marcos Tapajós", "Celestino Gomes", "Andre Kupkosvki", "Vinícius Teles"]
   s.email = "tapajos@gmail.com"
   s.rubyforge_project = "brdinheiro"
   s.homepage = "http://www.improveit.com.br/software_livre/brazilian_rails"
