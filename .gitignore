@@ -1,13 +1,3 @@
 .DS_Store
-brdinheiro/pkg
-brdinheiro/doc
-brdata/pkg
-brdata/doc
-brcep/pkg
-brcep/doc
-brtraducao/pkg
-brtraducao/doc
-brnumeros/pkg
-brnumeros/doc
-brstring/pkg
-brstring/doc
+**/pkg
+**/doc
