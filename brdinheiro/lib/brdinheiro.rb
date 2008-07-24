@@ -12,7 +12,7 @@ require 'bigdecimal'
 require 'rubygems'
 require 'active_record'
 require 'activesupport'
-# require 'brnumeros'
+require File.dirname(__FILE__) + '/../../brnumeros/lib/brnumeros'
 
 String.send(:include, DinheiroUtil)
 ActiveRecord::Base.send :include, DinheiroActiveRecord
