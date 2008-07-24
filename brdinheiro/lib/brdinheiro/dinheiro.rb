@@ -98,9 +98,11 @@ class Dinheiro
   #  6.reais.parcelar(2.reais) == DisivaPorNaoEscalarError
   #  6.reais.parcelar(0) == ZeroDivisionError
   def parcelar(numero_de_parcelar)
-    valor = (@quantia/numero_de_parcelar)/100.0
-    resto = valor + (@quantia%numero_de_parcelar)/100.0
-    [Dinheiro.new(valor)] * (numero_de_parcelar - 1) + [Dinheiro.new(resto)]
+    raise DivisaPorNaoEscalarError unless numero_de_parcelar.kind_of?(Integer)
+    resto = @quantia % numero_de_parcelar
+    valor_menor = Dinheiro.new((@quantia/numero_de_parcelar)/100.0)
+    valor_maior = Dinheiro.new((@quantia/numero_de_parcelar+1)/100.0)
+    [valor_menor] * (numero_de_parcelar - resto) + [valor_maior] * resto
   end
   
   # Escreve o valor por extenso.

@@ -91,9 +91,9 @@ class DinheiroTest < Test::Unit::TestCase
          [Dinheiro.new(33.33), Dinheiro.new(33.33), Dinheiro.new(33.34)] =>  Dinheiro.new(100).parcelar(3),
                                  [Dinheiro.new(50.00), Dinheiro.new(50)] =>  Dinheiro.new(100).parcelar(2),
                                 [Dinheiro.new(0.25), Dinheiro.new(0.25)] =>  Dinheiro.new(0.5).parcelar(2),
-             [Dinheiro.new(0.16), Dinheiro.new(0.16),Dinheiro.new(0.18)] =>  Dinheiro.new(0.5).parcelar(3),
-                                                    [Dinheiro.new(0.33)] => Dinheiro.new(0.33).parcelar(1) ,
-                                                    [Dinheiro.new(0.33)] => Dinheiro.new(0.33).parcelar(1) ,
+             [Dinheiro.new(0.16), Dinheiro.new(0.17),Dinheiro.new(0.17)] =>  Dinheiro.new(0.5).parcelar(3),
+                                                    [Dinheiro.new(0.33)] => Dinheiro.new(0.33).parcelar(1),
+                                                    [Dinheiro.new(0.33)] => Dinheiro.new(0.33).parcelar(1),
                                                     }                    
                     
                     
