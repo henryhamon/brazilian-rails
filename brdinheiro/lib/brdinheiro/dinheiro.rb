@@ -98,17 +98,6 @@ class Dinheiro
   #  6.reais.parcelar(2.reais) == DisivaPorNaoEscalarError
   #  6.reais.parcelar(0) == ZeroDivisionError
   def parcelar(numero_de_parcelar)
-    # Fixnum
-    # raise DivisaPorNaoEscalarError unless numero_de_parcelar.kind_of?(Integer)
-    # return @quantia/numero_de_parcelar if numero_de_parcelar == 0
-    # soma_parcial = Dinheiro.new(0)
-    # parcelas = []
-    # (numero_de_parcelar-1).times do
-    #   parcela = Dinheiro.new(transforma_em_string_que_represente_a_quantia(@quantia/numero_de_parcelar))
-    #   parcelas << parcela
-    #   soma_parcial += parcela
-    # end
-    # parcelas << Dinheiro.new(transforma_em_string_que_represente_a_quantia(@quantia - quantia_de(soma_parcial)))
     valor = (@quantia/numero_de_parcelar)/100.0
     resto = valor + (@quantia%numero_de_parcelar)/100.0
     [Dinheiro.new(valor)] * (numero_de_parcelar - 1) + [Dinheiro.new(resto)]
