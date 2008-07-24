@@ -12,7 +12,7 @@ require 'bigdecimal'
 require 'rubygems'
 require 'active_record'
 require 'activesupport'
-require 'brnumeros'
+# require 'brnumeros'
 
 String.send(:include, DinheiroUtil)
 ActiveRecord::Base.send :include, DinheiroActiveRecord
