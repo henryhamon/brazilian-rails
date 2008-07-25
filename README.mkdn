@@ -53,7 +53,7 @@ Os loucos que mantém tudo funcionando são: [Celestino Gomes][tino], [André Lu
 
 Alguns poucos já contribuiram para o plugin, direta e indireramente, como:
 
-[Shairon Toledo][st], [Guilherme Garnier][gg], Bruno Iecker, [Sylvestre Mergulhão][sm], Eduardo Fiorezi e Rafael Cardoso. Desculpe se esqueci de alguém
+[Shairon Toledo][st], [Guilherme Garnier][gg], Bruno Iecker, [Sylvestre Mergulhão][sm], Eduardo Fiorezi, Rafael Cardoso e Edson César. Desculpe se esqueci de alguém
 
 ## Como executar os testes:
 
